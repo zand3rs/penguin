@@ -11,6 +11,18 @@
 
 module.exports.bootstrap = function(cb) {
 
+  //-- lodash and async override
+  global._ = require("lodash");
+  global.async = require("async");
+
+  //-- merge env variables
+  if (_.isObject(sails.config.envvars)) {
+    _.merge(process.env, sails.config.envvars);
+  }
+
+  //-- global exception
+  global.Exception = require("../api/helpers/Exception");
+
   // It's very important to trigger this callback method when you are finished
   // with the bootstrap!  (otherwise your server will never lift, since it's waiting on the bootstrap)
   cb();

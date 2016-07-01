@@ -21,7 +21,7 @@
 
 module.exports = function(grunt) {
 
-  grunt.config.set('jst', {
+  grunt.config.set("jst", {
     dev: {
 
       // To use other sorts of templates, specify a regexp like the example below:
@@ -38,11 +38,11 @@ module.exports = function(grunt) {
 
       files: {
         // e.g.
-        // 'relative/path/from/gruntfile/to/compiled/template/destination'  : ['relative/path/to/sourcefiles/**/*.html']
-        '.tmp/public/jst.js': require('../pipeline').templateFilesToInject
+        // "relative/path/from/gruntfile/to/compiled/template/destination"  : ["relative/path/to/sourcefiles/**/*.html"]
+        ".tmp/public/jst.js": require("../pipeline").templateFilesToInject
       }
     }
   });
 
-  grunt.loadNpmTasks('grunt-contrib-jst');
+  grunt.loadNpmTasks("grunt-contrib-jst");
 };

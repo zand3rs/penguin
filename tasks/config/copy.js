@@ -21,24 +21,24 @@
  */
 module.exports = function(grunt) {
 
-  grunt.config.set('copy', {
+  grunt.config.set("copy", {
     dev: {
       files: [{
         expand: true,
-        cwd: './assets',
-        src: ['**/*.!(coffee|less)'],
-        dest: '.tmp/public'
+        cwd: "./assets",
+        src: ["**/*.!(coffee|less|scss|sass|tpl|txt|log|rb|js)"],
+        dest: ".tmp/public"
       }]
     },
     build: {
       files: [{
         expand: true,
-        cwd: '.tmp/public',
-        src: ['**/*'],
-        dest: 'www'
+        cwd: ".tmp/public",
+        src: ["**/*"],
+        dest: "www"
       }]
     }
   });
 
-  grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks("grunt-contrib-copy");
 };

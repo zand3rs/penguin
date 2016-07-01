@@ -9,6 +9,9 @@
  * http://sailsjs.org/#!/documentation/reference/sails.config/sails.config.http.html
  */
 
+var middlewares = require("../api/middlewares");
+var passport = require("passport");
+
 module.exports.http = {
 
   /****************************************************************************
@@ -30,35 +33,36 @@ module.exports.http = {
   *                                                                          *
   ***************************************************************************/
 
-    // order: [
-    //   'startRequestTimer',
-    //   'cookieParser',
-    //   'session',
-    //   'myRequestLogger',
-    //   'bodyParser',
-    //   'handleBodyParserError',
-    //   'compress',
-    //   'methodOverride',
-    //   'poweredBy',
-    //   '$custom',
-    //   'router',
-    //   'www',
-    //   'favicon',
-    //   '404',
-    //   '500'
-    // ],
+    order: [
+      "startRequestTimer",
+      "requestLogger",
+      "miscellaneous",
+      "cookieParser",
+      "session",
+      "passportInit",
+      "passportSession",
+      "bodyParser",
+      "handleBodyParserError",
+      "compress",
+      "methodOverride",
+      "securityHeaders",
+      "poweredBy",
+      "$custom",
+      "router",
+      "www",
+      "staticFiles",
+      "favicon",
+      "404",
+      "500"
+    ],
 
-  /****************************************************************************
-  *                                                                           *
-  * Example custom middleware; logs each request to the console.              *
-  *                                                                           *
-  ****************************************************************************/
-
-    // myRequestLogger: function (req, res, next) {
-    //     console.log("Requested :: ", req.method, req.url);
-    //     return next();
-    // }
-
+    passportInit      : passport.initialize(),
+    passportSession   : passport.session(),
+    miscellaneous     : middlewares.miscellaneous(),
+    requestLogger     : middlewares.requestLogger(),
+    staticFiles       : middlewares.staticFiles(),
+    securityHeaders   : middlewares.securityHeaders(),
+    poweredBy         : middlewares.poweredBy(),
 
   /***************************************************************************
   *                                                                          *

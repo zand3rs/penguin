@@ -21,8 +21,8 @@ module.exports.session = {
   * of your users, forcing them to log in again.                             *
   *                                                                          *
   ***************************************************************************/
-  secret: '4314b9010bd3550fcd97dfa015ea0acc',
-
+  secret: "4314b9010bd3550fcd97dfa015ea0acc",
+  key: "session",
 
   /***************************************************************************
   *                                                                          *
@@ -44,7 +44,7 @@ module.exports.session = {
   *                                                                          *
   ***************************************************************************/
 
-  // adapter: 'redis',
+  adapter: "redis",
 
   /***************************************************************************
   *                                                                          *
@@ -55,12 +55,12 @@ module.exports.session = {
   *                                                                          *
   ***************************************************************************/
 
-  // host: 'localhost',
-  // port: 6379,
-  // ttl: <redis session TTL in seconds>,
-  // db: 0,
-  // pass: <redis auth password>,
-  // prefix: 'sess:',
+  host: "localhost",
+  port: 6379,
+  ttl: 60*60*24, //-- 24 hours
+  db: 0,
+  pass: "",
+  prefix: "session:",
 
 
   /***************************************************************************
@@ -74,8 +74,8 @@ module.exports.session = {
   *                                                                          *
   ***************************************************************************/
 
-  // adapter: 'mongo',
-  // url: 'mongodb://user:password@localhost:27017/dbname', // user, password and port optional
+  // adapter: "mongo",
+  // url: "mongodb://user:password@localhost:27017/dbname", // user, password and port optional
 
   /***************************************************************************
   *                                                                          *
@@ -89,7 +89,7 @@ module.exports.session = {
   *                                                                          *
   ***************************************************************************/
 
-  // collection: 'sessions',
+  // collection: "sessions",
   // stringify: true,
   // mongoOptions: {
   //   server: {
