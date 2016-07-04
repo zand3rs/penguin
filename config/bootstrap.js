@@ -20,8 +20,16 @@ module.exports.bootstrap = function(cb) {
     _.merge(process.env, sails.config.envvars);
   }
 
-  //-- global exception
-  global.Exception = require("../api/helpers/Exception");
+  //-- load helpers
+  sails.helpers = require("include-all")({
+    dirname     : process.cwd() + "/api/helpers",
+    filter      : /(.+)\.js$/,
+    excludeDirs : /^\.(git|svn)$/,
+    optional    : true
+  });
+
+  //-- globals here...
+  global.Exception = sails.helpers.Exception;
 
   // It's very important to trigger this callback method when you are finished
   // with the bootstrap!  (otherwise your server will never lift, since it's waiting on the bootstrap)

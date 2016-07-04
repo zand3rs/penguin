@@ -13,7 +13,7 @@ module.exports = function() {
     res.locals.Exception = Exception;
 
     //-- expose Util to views
-    res.locals.Util = require("../helpers/Util");
+    res.locals.Util = sails.helpers.Util;
 
     next();
   };
