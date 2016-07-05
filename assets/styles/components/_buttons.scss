@@ -1,0 +1,30 @@
+@mixin buttonDimension($height) {
+  height: $height;
+  line-height: $height;
+}
+
+%button {
+  @include border-radius( $border-radius );
+  @include transition(background-color 0.3s ease);
+  @include buttonDimension(40px);
+  display: inline-block;
+  outline: 0;
+  text-decoration: none;
+  text-align: center;
+  border: 0;
+  padding: 0 1em;
+}
+
+.primary-button {
+  @extend %button;
+  background: $color-penguin-blue;
+  color: $color-white;
+  text-transform: uppercase;
+  font-size: pxEm(14);
+  font-weight: 600;
+  letter-spacing: 1px;
+
+  @include hoverStyles() {
+    background: $color-penguin-blue-2;
+  };
+}
