@@ -1,0 +1,53 @@
+.error-page {
+  padding-top: 3em;
+
+  .logo-wrap {
+    position: relative;
+  }
+
+  .title {
+    font-size: 150px;
+    font-weight: bold;
+    text-align: center;
+    color: $color-light-gray;
+    opacity: .4;
+  }
+
+  .penguin-outline {
+    @include hideText();
+    width: 60px;
+    height: 60px;
+    background-size: contain;
+    background-image: url($svg-dir + "penguin-outline.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0 auto;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+  }
+
+  blockquote {
+    text-align: center;
+    font-weight: bold;
+    color: $color-penguin-blue;
+    font-size: pxEm(18);
+    margin: .5em auto 1em;
+    padding: 0 pxEm(10, 18);
+    max-width: 400px;
+  }
+
+  p {
+    text-align: center;
+    font-size: pxEm(12);
+    font-weight: 300;
+  }
+}
+
+
+@include breakpoint(desktop-and-up) {
+  .error-page {
+    font-size: 1.5em;
+  }
+}

@@ -2,20 +2,10 @@
 <html lang="en">
   <head>
     <title><%- title %></title>
-    <%- partial("../common/head-meta") %>
-    <script>
-      // Check if SVG is supported
-      if (document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image", "1.1")) {
-        document.documentElement.className += " svg";
-      } else {
-        document.documentElement.className += " no-svg";
-      }
-    </script>
-
+    <%- partial("../_common/head-meta") %>
     <link rel="stylesheet" href="<%- Util.toAssetsUrl('/styles/main.css') %>">
   </head>
-
-  <body>
+  <body class="error-page">
     <%- body %>
   </body>
 </html>
