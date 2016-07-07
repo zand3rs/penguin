@@ -2,6 +2,8 @@
   @include hideText();
   background-repeat: no-repeat;
   height: 100%;
+  background-size: contain;
+  margin: auto;
 }
 
 .icon-arrow-blue {

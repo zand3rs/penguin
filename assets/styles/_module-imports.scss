@@ -1,6 +1,12 @@
 @import "components/wrap";
 @import "components/buttons";
+@import "components/tables";
+
 @import "components/site-footer";
+
+@import "components/admin-header";
 
 @import "pages/error";
 @import "pages/session/login";
+
+@import "pages/account/index";
