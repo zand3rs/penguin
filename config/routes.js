@@ -22,28 +22,61 @@
 
 module.exports.routes = {
 
-  /***************************************************************************
-  *                                                                          *
-  * Make the view located at `views/homepage.ejs` (or `views/homepage.jade`, *
-  * etc. depending on your default view engine) your home page.              *
-  *                                                                          *
-  * (Alternatively, remove this and add an `index.html` file in your         *
-  * `assets` directory)                                                      *
-  *                                                                          *
-  ***************************************************************************/
+  //-- login
+  "GET /"                       : "Session.login",
 
-  '/': {
-    view: 'homepage'
-  }
+  //-- users
+  "GET /users"                  : "User.index",
+  "GET /users/:id"              : "User.show",
+  "POST /users"                 : "User.create",
+  "GET /users/:id/edit"         : "User.edit",
+  "PUT /users/:id"              : "User.update",
+  "DELETE /users/:id"           : "User.destroy",
 
-  /***************************************************************************
-  *                                                                          *
-  * Custom routes here...                                                    *
-  *                                                                          *
-  * If a request to a URL doesn't match any of the custom routes above, it   *
-  * is matched against Sails route blueprints. See `config/blueprints.js`    *
-  * for configuration options and examples.                                  *
-  *                                                                          *
-  ***************************************************************************/
+  //-- accounts
+  "GET /accounts"                  : "Account.index",
+  "GET /accounts/:id"              : "Account.show",
+  "GET /accounts/new"              : "Account.new",
+  "POST /accounts"                 : "Account.create",
+  "GET /accounts/:id/edit"         : "Account.edit",
+  "PUT /accounts/:id"              : "Account.update",
+  "DELETE /accounts/:id"           : "Account.destroy",
+
+  //-- apps
+  "GET /apps"                  : "App.index",
+  "GET /apps/:id"              : "App.show",
+  "GET /apps/new"              : "App.new",
+  "POST /apps"                 : "App.create",
+  "GET /apps/:id/edit"         : "App.edit",
+  "PUT /apps/:id"              : "App.update",
+  "DELETE /apps/:id"           : "App.destroy",
+
+  //-- templates
+  "GET    /apps/:app_id/templates"           : "Template.index",
+  "GET    /apps/:app_id/templates/new"       : "Template.new",
+  "POST   /apps/:app_id/templates"           : "Template.create",
+  "GET    /apps/:app_id/templates/:id/edit"  : "Template.edit",
+  "PUT    /apps/:app_id/templates/:id"       : "Template.update",
+  "DELETE /apps/:app_id/templates/:id"       : "Template.destroy",
+
+  //-- entries
+  "GET    /templates/:template_id/entries"           : "Entry.index",
+  "GET    /templates/:template_id/entries/new"       : "Entry.new",
+  "POST   /templates/:template_id/entries"           : "Entry.create",
+  "GET    /templates/:template_id/entries/:id/edit"  : "Entry.edit",
+  "PUT    /templates/:template_id/entries/:id"       : "Entry.update",
+  "DELETE /templates/:template_id/entries/:id"       : "Entry.destroy",
+
+  //-- images
+  "GET     /images"       : "Image.index",
+  "POST    /images"       : "Image.create",
+
+  //-- videos
+  "GET     /videos"       : "Video.index",
+  "POST    /videos"       : "Video.create",
+
+  //-- documents
+  "GET     /documents"       : "Document.index",
+  "POST    /documents"       : "Document.create",
 
 };
