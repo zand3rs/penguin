@@ -1,0 +1,52 @@
+#site-footer {
+  padding: 2em 1em;
+  background: $color-light-gray;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
+  .copyright {
+    font-size: pxEm(14);
+  }
+
+  nav {
+    margin: 2em 0 0;
+
+    li {
+      margin-bottom: 1em;
+    }
+
+    a {
+      color: $color-dark-gray;
+      text-decoration: none;
+      cursor: pointer;
+      font-size: pxEm(14);
+
+      @include hoverStyles() {
+        color: $color-dark-gray-2;
+      };
+    }
+  }
+}
+
+@include breakpoint(desktop-and-up) {
+  #site-footer {
+    text-align: left;
+    @include clearfix();
+
+    .wrap {
+      max-width: pxEm(960);
+    }
+
+    nav {
+      margin: 0;
+      float: right;
+
+      li {
+        display: inline-block;
+        margin: 0 1.5em;
+      }
+    }
+  }
+}

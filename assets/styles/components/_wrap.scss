@@ -1,0 +1,7 @@
+.wrap {
+  @include clearfix();
+  max-width: pxEm(1200);
+  position: relative;
+  margin: auto;
+  width: 100%;
+}

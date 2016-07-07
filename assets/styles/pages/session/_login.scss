@@ -1,0 +1,26 @@
+.login {
+  padding-top: 4em;
+  text-align: center;
+  margin-bottom: 4em;
+
+  .logo {
+    width: 120px;
+    height: auto;
+    display: block;
+    margin: 0 auto 1em;
+  }
+
+  .title {
+    font-size: pxEm(36);
+    text-align: center;
+    font-weight: bold;
+    color: $color-penguin-blue;
+    margin-bottom: 1em;
+  }
+}
+
+@include breakpoint(tablet-and-up) {
+  .login {
+    padding-top: 8em;
+  }
+}

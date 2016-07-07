@@ -46,7 +46,7 @@
 }
 
 
-@include breakpoint(desktop-and-up) {
+@include breakpoint(tablet-and-up) {
   .error-page {
     font-size: 1.5em;
   }
