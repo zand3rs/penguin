@@ -35,8 +35,8 @@ module.exports.routes = {
 
   //-- accounts
   "GET /accounts"                  : "Account.index",
-  "GET /accounts/:id"              : "Account.show",
   "GET /accounts/new"              : "Account.new",
+  "GET /accounts/:id"              : "Account.show",
   "POST /accounts"                 : "Account.create",
   "GET /accounts/:id/edit"         : "Account.edit",
   "PUT /accounts/:id"              : "Account.update",
@@ -44,8 +44,8 @@ module.exports.routes = {
 
   //-- apps
   "GET /apps"                  : "App.index",
-  "GET /apps/:id"              : "App.show",
   "GET /apps/new"              : "App.new",
+  "GET /apps/:id"              : "App.show",
   "POST /apps"                 : "App.create",
   "GET /apps/:id/edit"         : "App.edit",
   "PUT /apps/:id"              : "App.update",
