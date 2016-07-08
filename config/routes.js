@@ -60,12 +60,12 @@ module.exports.routes = {
   "DELETE /apps/:app_id/templates/:id"       : "Template.destroy",
 
   //-- entries
-  "GET    /templates/:template_id/entries"           : "Entry.index",
-  "GET    /templates/:template_id/entries/new"       : "Entry.new",
-  "POST   /templates/:template_id/entries"           : "Entry.create",
-  "GET    /templates/:template_id/entries/:id/edit"  : "Entry.edit",
-  "PUT    /templates/:template_id/entries/:id"       : "Entry.update",
-  "DELETE /templates/:template_id/entries/:id"       : "Entry.destroy",
+  "GET    /apps/:app_id/templates/:template_id/entries"           : "Entry.index",
+  "GET    /apps/:app_id/templates/:template_id/entries/new"       : "Entry.new",
+  "POST   /apps/:app_id/templates/:template_id/entries"           : "Entry.create",
+  "GET    /apps/:app_id/templates/:template_id/entries/:id/edit"  : "Entry.edit",
+  "PUT    /apps/:app_id/templates/:template_id/entries/:id"       : "Entry.update",
+  "DELETE /apps/:app_id/templates/:template_id/entries/:id"       : "Entry.destroy",
 
   //-- images
   "GET     /images"       : "Image.index",
