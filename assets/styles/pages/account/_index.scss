@@ -1,33 +1,38 @@
 .account.index .table .body {
-  .links a {
-    text-transform: uppercase;
-    letter-spacing: 1px;
+  .link a {
     color: $color-dark-gray-3;
     text-decoration: none;
-    margin-right: 3em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 12px;
   }
 }
 
 @include breakpoint(small-screens-only) {
-  .account.index .table .body {
-    .name {
-      width: 100%;
-      margin-bottom: 5px;
+  .account.index .admin-header{
+    margin-bottom: 0;
+  }
+
+  .account.index .table {
+    .header {
+      padding: 0;
     }
 
-    .links {
-      padding-top: 0;
-      width: 60%;
-      font-size: 12px;
-      line-height: 32px;
-
-      a:last-child {
-        margin-right: 0;
+    .body {
+      .name {
+        width: 100%;
+        margin-bottom: 5px;
       }
-    }
 
-    .action {
-      width: 20%;
+      .link {
+        padding-top: 0;
+        line-height: 32px;
+        width: 30%;
+      }
+
+      .action {
+        width: 20%;
+      }
     }
   }
 }
@@ -35,16 +40,21 @@
 @include breakpoint(desktop-and-up) {
   .account.index .table {
     .name {
-      width: 30%;
+      width: 35%;
     }
 
-    .links,
     .owner {
       width: 25%;
     }
 
+    .link {
+      width: 100px;
+      max-width: 10%;
+    }
+
     .action {
-      width: 10%;
+      width: 80px;
+      max-width: 10%;
     }
   }
 }
