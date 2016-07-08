@@ -1,9 +1,21 @@
 <div id="site-header">
   <div class="wrap">
-    <a href="/" class="logo"><img src="<%- Util.toAssetsUrl('images/penguin-logo.png') %>" /></a>
+    <a href="/" class="logo"><img src="<%- Util.toAssetsUrl('images/penguin-logo.png') %>"/></a>
 
     <div id="user-menu">
-      <a href="#">Leslie Marie <span class="icon icon-arrow-white"></span></a>
+      <a href="#" class="user-menu-link">
+        <span class="icon icon-user"></span>
+        <span class="name">Leslie Marie</span>
+        <span class="icon icon-arrow-white"></span>
+      </a>
+
+      <nav>
+        <ul>
+          <li><a href="/accounts">Accounts</a></li>
+          <li><a href="/profile">Profile</a></li>
+          <li><a href="/logout">Log out</a></li>
+        </ul>
+      </nav>
     </div>
   </div>
 </div>
