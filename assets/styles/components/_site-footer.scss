@@ -1,5 +1,5 @@
 #site-footer {
-  padding: 2em 1em;
+  padding: pxEm($base-padding * 2) pxEm($base-padding);
   background: $color-light-gray;
   text-align: center;
   position: absolute;

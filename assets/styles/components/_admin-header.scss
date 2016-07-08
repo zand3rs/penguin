@@ -3,7 +3,7 @@ $admin-header-base-size: 20;
 .admin-header {
   background: $color-light-gray-4;
   font-size: pxEm($admin-header-base-size);
-  padding: 1em pxEm($base-font-size, $admin-header-base-size);
+  padding: 1em pxEm($base-padding, $admin-header-base-size);
   margin-bottom: 1em;
 
   .page-title {
