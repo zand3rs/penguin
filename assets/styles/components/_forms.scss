@@ -1,0 +1,71 @@
+form, .form {
+  padding: 0 pxEm($base-padding);
+
+  .form-title {
+    font-size: pxEm(20);
+    font-weight: 600;
+    margin-bottom: 2em;
+  }
+
+  p, .buttons {
+    @include clearfix();
+    margin-bottom: 1.5em;
+  }
+
+  .buttons {
+    @include clearfix();
+    text-align: right;
+    border-top: 1px solid $color-light-gray-2;
+    padding-top: pxEm($base-padding);
+    margin-top: pxEm($base-padding * 4);
+
+    p {
+      float: right;
+    }
+
+    .primary-button,
+    .outline-button {
+      width: 100px;
+      float: left;
+      margin-left: pxEm($base-padding);
+    }
+  }
+
+  label {
+    color: $color-dark-gray-2;
+    letter-spacing: 0.8px;
+    font-size: pxEm(14);
+    float: left;
+    width: 15%;
+    padding-top: pxEm(10,14);
+  }
+
+  .required {
+    color: $color-red;
+  }
+
+  .value {
+    float: right;
+    width: 85%;
+  }
+
+  input[type="text"] {
+    border: 1px solid $color-light-gray-3;
+    @include border-radius($border-radius);
+    padding: pxEm(10);
+  }
+}
+
+@include breakpoint(small-landscape-and-below) {
+  form {
+    label,
+    .value {
+      width: 100%;
+    }
+
+    label {
+      margin-bottom: 10px;
+    }
+  }
+
+}

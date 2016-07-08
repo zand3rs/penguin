@@ -1,6 +1,7 @@
 @import "components/wrap";
 @import "components/buttons";
 @import "components/tables";
+@import "components/forms";
 
 @import "components/site-header";
 @import "components/site-footer";
@@ -11,3 +12,4 @@
 @import "pages/session/login";
 
 @import "pages/account/index";
+@import "pages/account/new";
