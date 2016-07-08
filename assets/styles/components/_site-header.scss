@@ -1,0 +1,53 @@
+#site-header {
+  background: $color-black;
+
+  .logo {
+    display: block;
+    width: 50px;
+    height: 50px;
+    float: left;
+    line-height: 46px;
+    border-right: 1px solid $color-dark-gray-3;
+
+    img{
+      height: 32px;
+      width: auto;
+      vertical-align: middle;
+      margin: auto;
+    }
+  }
+
+  #user-menu {
+    float: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: right;
+
+    a {
+      color: $color-white;
+      text-decoration: none;
+      padding: 16px 0;
+      display: block;
+      font-weight: 300;
+    }
+
+    .icon {
+      height: 10px;
+      display: inline-block;
+      width: 14px;
+      margin: 6px 0 0 2em;
+      float: right;
+    }
+  }
+}
+
+@include breakpoint(small-screens-only) {
+  #site-header {
+    padding: 0 1em;
+
+    #user-menu {
+
+    }
+  }
+}
