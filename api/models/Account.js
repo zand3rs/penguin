@@ -1,5 +1,5 @@
 /**
-* User.js
+* Account.js
 *
 */
 

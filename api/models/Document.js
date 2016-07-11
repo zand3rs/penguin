@@ -1,5 +1,5 @@
 /**
-* Image.js
+* Document.js
 *
 */
 
