@@ -12,7 +12,7 @@
 module.exports.models = {
 
   connection: "master",
-  migrate: "alter",
+  migrate: "safe",
   schema: "true"
 
 };
