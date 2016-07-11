@@ -40,5 +40,17 @@ module.exports = {
       type: "datetime",
       columnName: "updated_at"
     }
+  },
+
+  afterCreate: function(values, next) {
+    var userId = values.createdBy;
+    var appId = Values.id;
+
+    var params = {
+      appId: appId,
+      userId: userId
+    };
+
+    AppUser.create(params, next);
   }
 }
