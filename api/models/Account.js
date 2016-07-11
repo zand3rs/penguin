@@ -38,14 +38,15 @@ module.exports = {
 
   afterCreate: function(values, next) {
     var userId = values.createdBy;
-    var accountId = values.id;
+    var entityId = values.id;
 
     var params = {
+      entityType: "account",
+      entityId: entityId,
       userId: userId,
-      accountId: accountId
     };
 
-    UserAccount.create(params, next);
+    Membership.create(params, next);
   }
 
 };
