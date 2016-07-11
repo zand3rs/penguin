@@ -39,6 +39,21 @@ module.exports = {
       type: "datetime",
       columnName: "updated_at"
     }
+  },
+
+  //-- lifecycle callbacks
+
+  afterCreate: function(values, next) {
+    var userId = values.id;
+    var name = values.username;
+
+    var params = {
+      name: name,
+      createdBy: userId,
+      updatedBy: userId
+    };
+
+    Account.create(params, next);
   }
 
 };
