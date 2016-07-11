@@ -33,8 +33,8 @@ module.exports.connections = {
   master: {
     adapter: "sails-postgresql",
     host: "localhost",
-    user: "",
-    password: "",
+    user: "penguin",
+    password: "penguin",
     database: "penguin"
   }
 
