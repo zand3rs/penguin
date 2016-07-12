@@ -49,7 +49,8 @@ module.exports = {
     var params = {
       entityType: "app",
       entityId: entityId,
-      userId: userId
+      userId: userId,
+      userType: "owner"
     };
 
     Membership.create(params, next);

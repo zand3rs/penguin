@@ -9,7 +9,6 @@ module.exports = {
   attributes: {
     entityType: {
       type: "string",
-      in: ["account", "app"],
       required: true,
       columnName: "entity_type"
     },
@@ -22,6 +21,21 @@ module.exports = {
       type: "string",
       required: true,
       columnName: "user_id"
+    },
+    userType: {
+      type: "string",
+      in: ["owner", "admin", "member"],
+      defaultsTo: "member",
+      required: true,
+      columnName: "user_type"
+    },
+    createdAt: {
+      type: "datetime",
+      columnName: "created_at"
+    },
+    updatedAt: {
+      type: "datetime",
+      columnName: "updated_at"
     }
   }
 

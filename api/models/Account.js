@@ -44,6 +44,7 @@ module.exports = {
       entityType: "account",
       entityId: entityId,
       userId: userId,
+      userType: "owner"
     };
 
     Membership.create(params, next);
