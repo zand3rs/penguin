@@ -32,14 +32,6 @@ module.exports = {
       columnName: "app_id",
       required: true
     },
-    createdAt: {
-      type: "datetime",
-      columnName: "created_at"
-    },
-    updatedAt: {
-      type: "datetime",
-      columnName: "updated_at"
-    },
     createdBy: {
       model: "User",
       type: "string",
@@ -51,6 +43,14 @@ module.exports = {
       type: "string",
       required: true,
       columnName: "updated_by"
+    },
+    createdAt: {
+      type: "datetime",
+      columnName: "created_at"
+    },
+    updatedAt: {
+      type: "datetime",
+      columnName: "updated_at"
     }
   }
 
