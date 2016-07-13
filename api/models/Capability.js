@@ -27,29 +27,33 @@ module.exports = {
       required: true,
       columnName: "entity_id"
     },
-    canCreate: {
-      type: "boolean",
-      required: true,
-      defaultsTo: false,
-      columnName: "can_create"
-    },
     canView: {
       type: "boolean",
-      required: true,
       defaultsTo: false,
       columnName: "can_view"
     },
-    canEdit: {
+    canCreate: {
       type: "boolean",
-      required: true,
       defaultsTo: false,
-      columnName: "can_edit"
+      columnName: "can_create"
+    },
+    canUpdate: {
+      type: "boolean",
+      defaultsTo: false,
+      columnName: "can_update"
     },
     canDelete: {
       type: "boolean",
-      required: true,
       defaultsTo: false,
       columnName: "can_delete"
+    },
+    createdAt: {
+      type: "datetime",
+      columnName: "created_at"
+    },
+    updatedAt: {
+      type: "datetime",
+      columnName: "updated_at"
     }
   }
 
