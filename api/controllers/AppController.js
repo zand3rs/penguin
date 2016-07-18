@@ -12,31 +12,33 @@ module.exports = {
     var limit = req.param("limit") || sails.config.limits.pageLimit;
 
     async.auto({
-      apps: function (next) {
+      userApps: function(next) {
+        var criteria = {
+          entityType: "app",
+          userId: req.user.id
+        };
+
+        Membership.find(criteria, next);
+      },
+      apps: ["userApps", function (next) {
+        var membership = result.userApps;
+
+        //get ids of apps
+        var ids = _.compact(_.map(memberships, "entityId"));
+
         var paginatorOptions = {
           page: page,
           limit: limit,
           model: "app",
-          criteria: {createdBy: req.user.id}
+          criteria: {id: ids},
+          populate: ["accountId"]
         };
         sails.helpers.PaginatorHelper(paginatorOptions, next);
-      },
-      templates: ["apps", function (next, result) {
-        var apps = _.get(result, "apps.data", []);
-        var appIds = _.map(apps, "id") || [];
-        Template.find({appId: appIds}, next);
       }]
     }, function(err, result) {
       var apps =  _.get(result, "apps.data", []);
       var meta =  _.get(result, "apps.meta", {});
-      var templates = result.templates || [];
       var payload = {};
-
-      //attach template count to apps
-      var templateCount = _.countBy(templates, "appId");
-      _.map(apps, function (item) {
-        return item.templateCount = templateCount[item.id] || 0;
-      });
 
       res.format({
         html: function() {
