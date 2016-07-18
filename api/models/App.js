@@ -8,6 +8,7 @@ module.exports = {
   tableName: "apps",
   attributes: {
     accountId: {
+      model: "Account",
       type: "string",
       required: true,
       columnName: "account_id"
